@@ -2,6 +2,7 @@
 const inquirer = require('inquirer');
 console.log('challenge 9 node noodles');
 const fs = require('fs');
+const markdown = require('./generateMarkdown')
 // TODO: Create an array of questions for user input
 const person = {
     fistName: "paul",
@@ -15,8 +16,8 @@ const questions = [
     {
         type: 'input',
         name: 'tittle',
-        message: 'what is your project name ?',
-        default: false,
+        message: 'what is your project tittle ?',
+    
     },
     {
         type: 'input',
@@ -26,8 +27,16 @@ const questions = [
     },
     {
     type: 'confirm',
-    name: 'school',
-    message: "do you go to SMU ?"
+    name: 'confirmation',
+    message: "will you be using this for a read-me ?"
+
+    },
+
+    {
+        type: 'input',
+        name: 'description',
+        massage: 'what is your project purpose ?'
+
     },
 
 {
@@ -39,7 +48,7 @@ const questions = [
 {
 type:'input',
 name:'app',
-message:'whats your app for ?',
+message:'whats your app consist of ?',
 }
 ];
 
