@@ -18,16 +18,12 @@ function generateMarkdown(data) {
   - [questions](#questions)
 
   ## description
-  ${answers.usage}
+  ${data.description}
 
-  ##questions
-  ${answers.email}
-  ${answers.github}
-  ${answers.app}
-  ${answers.tittle}
-  ${answers.description}
-  ${answers.confirmation}
-
+  ## questions
+  Email: ${data.email}
+  GitHub: https://github.com/${data.github}
+  ${data.app}
 `;
 }
 

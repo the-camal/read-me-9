@@ -1,34 +1,26 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
-console.log('challenge 9 node noodles');
 const fs = require('fs');
-const markdown = require('./generateMarkdown')
+const generateMarkdown = require('./generateMarkdown');
 // TODO: Create an array of questions for user input
-const person = {
-    fistName: "paul",
-    lastName: "courts"
-
-}
-
-
 
 const questions = [
     {
         type: 'input',
-        name: 'tittle',
-        message: 'what is your project tittle ?',
-    
+        name: 'title',
+        message: 'what is your project title ?',
+
     },
     {
         type: 'input',
         name: 'email',
         massage: "what is your email ?",
-        
+
     },
     {
-    type: 'confirm',
-    name: 'confirmation',
-    message: "will you be using this for a read-me ?"
+        type: 'confirm',
+        name: 'confirmation',
+        message: "will you be using this for a read-me ?"
 
     },
 
@@ -39,40 +31,39 @@ const questions = [
 
     },
 
-{
-    type: 'input',
-    name: 'github',
-    message: 'what is your git-hub name ?',
-},
+    {
+        type: 'input',
+        name: 'github',
+        message: 'what is your git-hub name ?',
+    },
 
-{
-type:'input',
-name:'app',
-message:'whats your app consist of ?',
-}
+    {
+        type: 'input',
+        name: 'app',
+        message: 'whats your app consist of ?',
+    }
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFileSync(fileName, data, function (err) {
+        console.log(data)
+        if (err) {
+            console.log(err)
+        } else {
+            console.log("README.md successfully created")
+        }
+    })
+}
 
 // TODO: Create a function to initialize app
-function init() {}
-
+function init() {
+    inquirer.prompt(questions)
+        .then(function (data) {
+            writeToFile("README.md", generateMarkdown(data))
+            console.log(data)
+        })
+}
 // Function call to initialize app
 init();
 
-inquirer
-  .prompt(questions)
-    /* Pass your questions in here */
-  .then((answers) => {
-    // Use user feedback for... whatever!!
-const markdown=''
-fs.writeFileSync('./output/readme.md',markdown)
-  })
-  .catch((error) => {
-    if (error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
-    } else {
-      // Something else went wrong
-    }
-  });
