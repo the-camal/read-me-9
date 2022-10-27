@@ -18,10 +18,10 @@ const questions = [
 
     },
     {
-        type: 'confirm',
-        name: 'confirmation',
-        message: "will you be using this for a read-me ?"
-
+    type: "list",
+    name: "license",
+    message: "What license is needed?",
+    choices: ['None', 'MIT', 'Apache', 'Boost', 'BDS 3-Clause']
     },
 
     {
