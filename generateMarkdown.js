@@ -34,16 +34,16 @@ function renderLicenseBadge(data) {
 
 // If there is no license, return an empty string
 function renderLicenseLink(data) {
-  if(data.license === "MIT") {
+  if (data.license === "MIT") {
     badgeForLicense = badgeForLicense.concat("(https://opensource.org/licenses/MIT)")
   }
-  if(data.license === "Apache") {
+  if (data.license === "Apache") {
     badgeForLicense = badgeForLicense.concat("(https://opensource.org/licenses/Apache-2.0)")
   }
-  if(data.license === "Boost") {
+  if (data.license === "Boost") {
     badgeForLicense = badgeForLicense.concat("(https://www.boost.org/LICENSE_1_0.txt")
   }
-  if(data.license === "BDS 3-Clause") {
+  if (data.license === "BDS 3-Clause") {
     badgeForLicense = badgeForLicense.concat("(https://opensource.org/licenses/BSD-3-Clause)")
   }
 }
@@ -52,7 +52,13 @@ function renderLicenseLink(data) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(data)
-  
+if (data.license === "None") {
+  return ''
+} else {
+  return `- [License](#license)`
+}
+
+
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
