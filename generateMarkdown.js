@@ -34,7 +34,7 @@ function renderLicenseBadge(data) {
 
 // If there is no license, return an empty string
 function renderLicenseLink(data) {
-  if (data.license === "MIT") {
+  if (data.license === "mit") {
     badgeForLicense = badgeForLicense.concat("(https://opensource.org/licenses/MIT)")
   }
   if (data.license === "Apache") {
@@ -43,7 +43,7 @@ function renderLicenseLink(data) {
   if (data.license === "Boost") {
     badgeForLicense = badgeForLicense.concat("(https://www.boost.org/LICENSE_1_0.txt")
   }
-  if (data.license === "BDS 3-Clause") {
+  if (data.license === "BDS") {
     badgeForLicense = badgeForLicense.concat("(https://opensource.org/licenses/BSD-3-Clause)")
   }
 }
