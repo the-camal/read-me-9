@@ -4,7 +4,7 @@ let badgeForLicense = "";
 
 function renderLicenseBadge(data) {
 
-  if (data.license === "MIT") {
+  if (data.license === "mit") {
     badgeForLicense = `## License
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)]`;
     renderLicenseLink(data)
@@ -22,7 +22,7 @@ function renderLicenseBadge(data) {
 [![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)]`;
       return badgeForLicense;
   }
-  if (data.license === "BDS 3-Clause") {
+  if (data.license === "BDS") {
     badgeForLicense =
       `## License
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)]`;
