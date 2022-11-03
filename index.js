@@ -21,7 +21,7 @@ const questions = [
     type: "list",
     name: "license",
     message: "What is the correct license that is needed?",
-    choices: ['None', 'MIT', 'Apache', 'Boost', 'BDS 3-Clause']
+    choices: ['None', 'nit', 'Apache', 'Boost', 'bds']
     },
 
     {
